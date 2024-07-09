@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .profile-picture {
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-picture">
+        <input id="file-input" class="file-uploader" type="file" onchange="upload()" >
+    </div>
+    
+    <script>
+     
+
+        function upload() {
+            const fileInput = document.getElementById('file-input');
+            const profilePicture = document.querySelector('.profile-picture');
+
+            const file = fileInput.files[0];
+            
+                const imageUrl = URL.createObjectURL(file);
+                console.log(imageUrl)
+                profilePicture.style.backgroundImage = `url(${imageUrl})`;
+            
+        }
+    </script>
+</body>
+</html>

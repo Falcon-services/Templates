@@ -1,0 +1,421 @@
+
+body{
+    background: #F3E9E5;;
+}
+.blogCard img{
+    width: 240px;
+    height: 230px;
+}
+
+
+header {
+    background-color: rgb(88 116 116);
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+    
+}
+
+nav a {
+    color: rgb(193, 217, 193);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.blogs{
+    background: #F3E9E5;;
+    text-align: center;
+    align-items: center;
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr); */
+
+}
+
+
+.blogCard{
+    margin: 11px;
+    border-radius: 22px;
+    border:2px solid black;
+    box-shadow: 2px 2px 2px 2px #6d6060;
+    background: lightblue;
+    width: 300px;
+    height:400px;
+  word-wrap: break-word;
+  text-align: center;
+  
+   
+}
+
+.blogCard p{
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.blogCard img{
+    margin-top: -16px;
+    /* margin-left: 30px; */
+}
+.upload_form{
+    background-color: darkseagreen;
+    width: 291px;
+    padding: 25px;
+    border: 2px solid #020202;
+    box-shadow: 2px 2px 2px 2px darkblue;
+    margin-left: 15px;
+    height: 513px;
+margin-top: 4px;
+}
+
+label{
+    padding: 20px;
+    font-weight: 700;
+    font-size: 20px;
+}
+#short_desc{
+    padding: 20px;
+}
+#description{
+    margin-left: 65px; 
+    padding: 20px;
+}
+
+#image{
+    margin-left: 81px;
+    margin-top: -19px;
+    display: list-item;
+}
+
+form>h2{
+    text-align: center;
+    font-size: xx-large;
+    margin-top: -3px;
+
+}
+
+#submit{
+    margin-left: 112px;
+    margin-top: 17px;
+    font-size: larger;
+    padding: 4px;
+    border-radius: 12px;
+    background-color: green;
+}
+
+#submit:hover{
+    cursor: pointer;
+    background: rgb(103, 184, 103);
+}
+
+
+.welcome img{
+
+
+    width: 100%;
+    height: 400px;
+}
+
+.webName{
+    text-align: center;
+margin:10px 0px ;
+display: none;
+}
+
+
+   
+footer {
+  margin-top: 20px;
+  background-color: #e8d8d1;
+  padding: 1em;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.blogDecs{
+  background: rgb(214, 214, 214);
+  height: auto;
+  padding: 34px;
+  font-family: cursive;
+  text-align: justify;
+  font-size: medium;
+}
+
+.abtImg{
+  width: 100%;
+  height: 340px;
+}
+
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #3469db;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+ 
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #a4baa5;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #b4b4b4;
+  padding: 20px;
+  margin:auto;
+  width: 305px;
+  margin-top:10px ;
+}
+
+#description{
+  margin-left: 0px;
+  height: 90px;
+  width:290px;
+}
+
+nav a {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .blogCard {
+      background-color: lightblue;
+      margin: 30px;
+      
+    }
+
+    .welcome img{
+      src: "wlcomMob.jpeg";
+    }
+
+  }
+
+  @media only screen and (min-width: 600px) {
+
+
+
+    .HomeBlogs{
+       
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            width: 100%;  
+            background: #F3E9E5;;
+            text-align: center;
+            align-items: center;
+    }
+
+    .blogs{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        width: 100%;  
+         
+     }
+
+     .blogCard{
+        margin: 11px;
+        border-radius: 22px;
+        border:2px solid black;
+        box-shadow: 2px 2px 2px 2px #6d6060;
+        background: rgb(218, 223, 224);
+        width: 340px;
+        height:400px;
+      word-wrap: break-word;
+      margin: auto;
+        margin-top: 30px;
+       
+    }
+ 
+     
+
+     input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      #submit {
+
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 12px 0px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      
+      #submit:hover {
+        background-color:#4CAF50(103, 184, 103);
+       
+      }
+      
+
+      form>h2{
+        text-align: center;
+        font-size: xx-large;
+        margin-top: -3px;
+    
+    }
+
+      .upload_form {
+
+        height: 538px;
+        margin: auto;
+        width: 400px;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-top: 14px;
+        
+ 
+    }
+
+      #description{
+        margin: 0;
+        height: 90px;
+        width:360px;
+      }
+
+      header {
+        background-color:#F3E9E5;
+        color: black;
+      }    
+      nav a {
+        color: darkblue;
+        font-size: 26px;
+        font-family: cursive;
+
+      }
+
+     
+footer {
+  margin-top: 20px;
+  background-color: #e8d8d1;
+  padding: 1em;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.blogDecs{
+ 
+  font-size: 94px;
+  background: rgb(214, 214, 214);
+  height: auto;
+  padding: 49px;
+  /* padding-top: 11px; */
+  font-family: system-ui;
+  text-align: justify;
+  font-size: 25px;
+  align-content: space-between;
+  white-space-collapse: break-spaces;
+}
+
+.abtImg{
+  width: 100%;
+  height: 340px;
+}
+
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #3469db;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+ 
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #a4baa5;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #b4b4b4;
+  padding: 20px;
+  margin:auto;
+  width: 695px;
+
+
+}
+
+
+  }
+

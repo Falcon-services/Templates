@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>i am a food blog . Celebrating the awesomeness of food</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <p class="nofood">no food no life</p>
+      <ul>
+        <li class="navbarLogo">
+          <img
+            class="navbarlogoImg"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC05NTIuMzYyMTgpIj48cGF0aCBkPSJtIDE2LDk2OS4zNjIxOCBjIC0zLjMxMzcsMCAtNiwyLjY4NjIgLTYsNiAwLDMuMzEzNiAyLjY4NjMsNiA2LDYgbCA2OCwwIGMgMy4zMTM3LDAgNiwtMi42ODY0IDYsLTYgMCwtMy4zMTM4IC0yLjY4NjMsLTYgLTYsLTYgeiBtIDAsMjcgYyAtMy4zMTM3LDAgLTYsMi42ODYyIC02LDYuMDAwMDIgMCwzLjMxMzYgMi42ODYzLDYgNiw2IGwgNjgsMCBjIDMuMzEzNywwIDYsLTIuNjg2NCA2LC02IDAsLTMuMzEzODIgLTIuNjg2MywtNi4wMDAwMiAtNiwtNi4wMDAwMiB6IG0gMCwyNy4wMDAwMiBjIC0zLjMxMzcsMCAtNiwyLjY4NjIgLTYsNiAwLDMuMzEzNiAyLjY4NjMsNiA2LDYgbCA2OCwwIGMgMy4zMTM3LDAgNiwtMi42ODY0IDYsLTYgMCwtMy4zMTM4IC0yLjY4NjMsLTYgLTYsLTYgeiI+PC9wYXRoPjwvZz48L3N2Zz4="
+            alt="loading"
+          />
+        </li>
+        <li class="headImg">
+          <img
+            class="headImg1"
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxMy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDE0OTQ4KSAgLS0+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMSBUaW55Ly9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLXRpbnkuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBiYXNlUHJvZmlsZT0idGlueSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiDQoJIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTQ1Ljk4OXB4IiBoZWlnaHQ9IjE5LjEzOXB4IiB2aWV3Qm94PSIwIDAgMTQ1Ljk4OSAxOS4xMzkiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNS45MTYsNS4wODFIMHYyLjgwMWgxLjI0M3Y0LjI0N0gwdjIuOGg3LjE1OXYtMi44SDUuOTE2VjUuMDgxeiBNMzkuODYzLDguMTIzDQoJCWMwLTEuODU0LTEuMTEzLTMuMjQ1LTIuNzYzLTMuMjQ1Yy0xLjc4LDAtMy4wMDQsMS4xMzEtMy42MzUsMi4zMzZjLTAuMjc4LTEuNDI4LTEuMjk4LTIuMzM2LTIuNjg5LTIuMzM2DQoJCWMtMS43MjUsMC0yLjkzLDEuMTMxLTMuNTYxLDIuMzE4VjUuMDgxaC01LjcxMnYyLjgwMWgxLjIyNHYzLjkzMmgtMS41NDR2MC42ODZjMCwwLjI3OC0wLjEzLDAuNDI3LTAuMzcxLDAuNDI3DQoJCWMtMC4yMjMsMC0wLjM1Mi0wLjE0OC0wLjM1Mi0wLjQyN1Y4LjEwNGMwLTEuNzI1LTEuNzYyLTMuMjQ1LTQuOTg5LTMuMjQ1Yy0zLjIwOCwwLTQuNzExLDEuMzcyLTQuNzExLDIuNjUyDQoJCWMwLDEuMTEzLDAuNzc5LDEuNzk5LDIuMTUxLDEuNzk5YzEuMzczLDAsMi4wMjEtMC41MzgsMi4wMjEtMS4xNjhjMC0wLjIyMi0wLjA5My0wLjM3MS0wLjA5My0wLjU3NQ0KCQljMC0wLjI0MSwwLjE0OC0wLjQyNywwLjU1Ny0wLjQyN2MwLjUxOSwwLDAuNTc1LDAuMzM0LDAuNTc1LDAuODM0djEuNTU4Yy0zLjUyMywwLjA5My02LjA4MywwLjg3MS02LjA4MywzLjAyMg0KCQljMCwxLjY4OCwxLjU0LDIuNTc4LDMuNTA1LDIuNTc4YzEuMjQyLDAsMi41MjItMC42NDksMy4wMDQtMS40MjhjMC40NjMsMC44NzEsMS43NjIsMS40MjgsMy4wNDIsMS40MjgNCgkJYzAuODQsMCwxLjUyOS0wLjIwNCwyLjA2My0wLjU1NXYwLjM1MWg2LjI2OXYtMi44aC0wLjU1N1Y5LjU4OGMwLjMxNS0xLjI0MywwLjgxNi0xLjg1NCwxLjI4LTEuODU0DQoJCWMwLjUxOSwwLDAuNTU2LDAuNzc5LDAuNTU2LDEuNjMydjIuNzY0aC0wLjUzOHYyLjhoNS41NjN2LTIuOGgtMC41MzhWOS41ODhjMC4zMTUtMS4yNDMsMC43OTctMS44NTQsMS4yNzktMS44NTQNCgkJYzAuNTIsMCwwLjU1NywwLjc3OSwwLjU1NywxLjYzMnYyLjc2NGgtMC41Mzh2Mi44aDYuMjV2LTIuOGgtMS4yMjRWOC4xMjN6IE0xNS45NzIsMTIuMDM2YzAsMC4zODktMC4zMzQsMC43MjMtMC43NiwwLjcyMw0KCQljLTAuNDY0LDAtMC43NDItMC4yNi0wLjc0Mi0wLjcwNGMwLTAuNjEyLDAuNDgyLTEuMTEzLDEuNTAyLTEuMTg4VjEyLjAzNnogTTU1LjAyNCwxMi40OTljMCwwLjI3OC0wLjEzLDAuNDI3LTAuMzcxLDAuNDI3DQoJCWMtMC4yMjMsMC0wLjM1My0wLjE0OC0wLjM1My0wLjQyN1Y4LjEwNGMwLTEuNzI1LTEuNzYyLTMuMjQ1LTQuOTg4LTMuMjQ1Yy0zLjIwOCwwLTQuNzExLDEuMzcyLTQuNzExLDIuNjUyDQoJCWMwLDEuMTEzLDAuNzc5LDEuNzk5LDIuMTUxLDEuNzk5YzEuMzczLDAsMi4wMjEtMC41MzgsMi4wMjEtMS4xNjhjMC0wLjIyMi0wLjA5My0wLjM3MS0wLjA5My0wLjU3NQ0KCQljMC0wLjI0MSwwLjE0OC0wLjQyNywwLjU1Ny0wLjQyN2MwLjUxOSwwLDAuNTc1LDAuMzM0LDAuNTc1LDAuODM0djEuNTU4Yy0zLjUyMywwLjA5My02LjA4MywwLjg3MS02LjA4MywzLjAyMg0KCQljMCwxLjY4OCwxLjU0LDIuNTc4LDMuNTA1LDIuNTc4YzEuMjQyLDAsMi41MjItMC42NDksMy4wMDQtMS40MjhjMC40NjMsMC44NzEsMS43NjIsMS40MjgsMy4wNDIsMS40MjgNCgkJYzIuMDk1LDAsMy4zMDEtMS4yMjQsMy4zMDEtMy4wMDR2LTAuMzE1aC0xLjU1OFYxMi40OTl6IE00OS44MTIsMTIuMDM2YzAsMC4zODktMC4zMzQsMC43MjMtMC43NiwwLjcyMw0KCQljLTAuNDY0LDAtMC43NDItMC4yNi0wLjc0Mi0wLjcwNGMwLTAuNjEyLDAuNDgyLTEuMTEzLDEuNTAyLTEuMTg4VjEyLjAzNnogTTY0Ljk4OSw3Ljg4MmgxLjYzMlY1LjA4MWgtMS42MzJ2LTEuOTENCgkJYzAtMC4zODksMC4xODYtMC43MDUsMC42NDktMC43MDVjMS4yNjEsMCwwLjY4NiwyLjE1MSwyLjU3OCwyLjE1MWMxLjE2OCwwLDEuNjE0LTAuNzQyLDEuNjE0LTEuNjMyYzAtMS4wOTQtMS4yNDMtMi40My00LjQ3LTIuNDMNCgkJYy0zLjM1NiwwLTUuMDQ0LDEuNzgtNS4wNDQsNC41MjVoLTEuNDI4djIuODAxaDEuNDI4djQuMjQ3aC0xLjI0M3YyLjhoNy4zNDR2LTIuOGgtMS40MjhWNy44ODJ6IE0xMDAuMzQ4LDAuOTQ2aC01LjkxNnYyLjhoMS4yMjUNCgkJdjIuNDg1Yy0wLjY4Ny0wLjg3Mi0xLjc0My0xLjM1NC0yLjgwMS0xLjM1NGMtMi4wNDIsMC0zLjQ3OSwxLjQyNy0zLjg1OSwzLjgyNWMtMC42MDYtMi40MDEtMi44NzYtMy44MjUtNS41ODUtMy44MjUNCgkJYy0yLjY4MiwwLTQuOTM0LDEuMzk3LTUuNTY1LDMuNzU3Yy0wLjYzMy0yLjM2LTIuODg0LTMuNzU3LTUuNTY2LTMuNzU3Yy0zLjE3MSwwLTUuNzQ5LDEuOTQ3LTUuNzQ5LDUuMTM3DQoJCWMwLDMuMTcxLDIuNTc4LDUuMTE5LDUuNzQ5LDUuMTE5YzIuNjgzLDAsNC45MzQtMS4zOTcsNS41NjYtMy43NDZjMC42MzIsMi4zNDksMi44ODQsMy43NDYsNS41NjUsMy43NDYNCgkJYzIuNzA5LDAsNC45NzktMS40MjQsNS41ODUtMy44MTNjMC4zOCwyLjM4NywxLjgxNywzLjgxMywzLjg1OSwzLjgxM2MxLjA1OCwwLDIuMTE0LTAuNDgyLDIuODAxLTEuMzU0djEuMTQ5aDUuOTE2di0yLjhoLTEuMjI1DQoJCVYwLjk0NnogTTczLjA3OCwxMS41OTFjMCwwLjYzMS0wLjIyMywxLjExMi0wLjc5OCwxLjExMmMtMC41NzUsMC0wLjgxNi0wLjQ4MS0wLjgxNi0xLjExMlY4LjQzOGMwLTAuNjQ5LDAuMjQxLTEuMTMxLDAuODE2LTEuMTMxDQoJCWMwLjU3NSwwLDAuNzk4LDAuNDgyLDAuNzk4LDEuMTMxVjExLjU5MXogTTg0LjIwOSwxMS41OTFjMCwwLjYzMS0wLjIyMywxLjExMi0wLjc5OCwxLjExMmMtMC41NzQsMC0wLjgxNS0wLjQ4MS0wLjgxNS0xLjExMlY4LjQzOA0KCQljMC0wLjY0OSwwLjI0MS0xLjEzMSwwLjgxNS0xLjEzMWMwLjU3NSwwLDAuNzk4LDAuNDgyLDAuNzk4LDEuMTMxVjExLjU5MXogTTk1LjY1NywxMS4yMzhjMCwwLjcyNC0wLjI2LDEuMjc5LTAuOTA5LDEuMjc5DQoJCWMtMC42NjgsMC0wLjkyNy0wLjU1Ni0wLjkyNy0xLjI3OVY4Ljc3MmMwLTAuNzI0LDAuMjU5LTEuMjYxLDAuOTI3LTEuMjYxYzAuNjQ5LDAsMC45MDksMC41MzgsMC45MDksMS4yNjFWMTEuMjM4eiBNMTI4LjU3LDQuODc3DQoJCWMtMy4xNzEsMC01Ljc0OSwxLjk0Ny01Ljc0OSw1LjEzN2MwLDAuNzg0LDAuMTU4LDEuNDkyLDAuNDQzLDIuMTE1aC0xLjAzOVYwLjk0NmgtNS45MTZ2Mi44aDEuMjQydjguMzgzaC0xLjE1Ng0KCQljMC4xODItMC42MjMsMC4yNzktMS4zMzEsMC4yNzktMi4xMTVjMC0zLjE4OS0xLjU3Ni01LjEzNy0zLjk2OS01LjEzN2MtMS4wMzgsMC0yLjA5NiwwLjQ4Mi0yLjgsMS4zNTRWMC45NDZoLTUuOTE2djIuOGgxLjI0Mg0KCQl2MTEuMTgzaDMuNTQybDEuMTMyLTEuMTQ5YzAuNzA0LDAuODcxLDEuNzYyLDEuMzU0LDIuOCwxLjM1NGMxLjcyMywwLDMuMDExLTEuMDIyLDMuNjA0LTIuNzcxdjIuNTY3aDcuMTU4di0yLjQxMg0KCQljMC45NTgsMS42NTksMi44ODMsMi42MTYsNS4xMDMsMi42MTZjMy4xNzEsMCw1Ljc0OS0xLjk0Nyw1Ljc0OS01LjExOUMxMzQuMzE5LDYuODI1LDEzMS43NDEsNC44NzcsMTI4LjU3LDQuODc3eiBNMTExLjc0MiwxMS4yMzgNCgkJYzAsMC43MjQtMC4yNiwxLjI3OS0wLjkwOSwxLjI3OWMtMC42NjcsMC0wLjkyNy0wLjU1Ni0wLjkyNy0xLjI3OVY4Ljc3MmMwLTAuNzI0LDAuMjYtMS4yNjEsMC45MjctMS4yNjENCgkJYzAuNjQ5LDAsMC45MDksMC41MzgsMC45MDksMS4yNjFWMTEuMjM4eiBNMTI5LjM2OCwxMS41OTFjMCwwLjYzMS0wLjIyMywxLjExMi0wLjc5OCwxLjExMnMtMC44MTYtMC40ODEtMC44MTYtMS4xMTJWOC40MzgNCgkJYzAtMC42NDksMC4yNDEtMS4xMzEsMC44MTYtMS4xMzFzMC43OTgsMC40ODIsMC43OTgsMS4xMzFWMTEuNTkxeiBNMTQzLjYzMyw2LjQxN2MwLjU1NywwLDAuMjYsMS4wMiwxLjI3OSwxLjAyDQoJCWMwLjY2OCwwLDEuMDc2LTAuNTkzLDEuMDc2LTEuMTg3YzAtMC44MzQtMC42MzEtMS4zNzItMS41NTgtMS4zNzJjLTAuNzYxLDAtMS40NjYsMC40MjYtMS45MSwxLjAyDQoJCWMtMC43MDUtMC42MzEtMS44MzctMS4wMi0zLjQzMi0xLjAyYy0yLjkxMSwwLTQuMzAzLDEuNTc2LTQuMzAzLDMuMzE5YzAsMC43OTcsMC4zMzQsMS44OTIsMS4wMzksMi40MjkNCgkJYy0xLjI0MiwwLjYxMi0yLjAwMywxLjM1NC0yLjAwMywyLjYzNGMwLDAuOTA5LDAuNTk0LDEuNzgsMS4zMTYsMi4xMzNjLTAuNjQ4LDAuMjYtMS4yMjQsMC45MjctMS4yMjQsMS43OA0KCQljMCwwLjg5MSwwLjYxMiwxLjk2NiwyLjY4OSwxLjk2NmgzLjU0MmMzLjIyNywwLDQuODk2LTIuMTE0LDQuODk2LTQuMDA2YzAtMS44NzMtMS4xMzEtMi44MTktMy41NjEtMi44MTloLTQuMDgNCgkJYy0wLjQ0NSwwLTAuNzIzLTAuMzE0LTAuNzIzLTAuNTU2YzAtMC4xNjcsMC4xMjktMC4zOSwwLjMzMy0wLjUzOGMwLjUzOCwwLjE4NiwxLjI4LDAuMjk3LDIuMDc3LDAuMjk3DQoJCWMyLjkzMSwwLDQuMzIxLTEuNTU4LDQuMzIxLTMuMzJjMC0wLjQ2My0wLjExMS0xLjE1LTAuMjYtMS40NjVDMTQzLjI2Miw2LjU0NiwxNDMuNDQ4LDYuNDE3LDE0My42MzMsNi40MTd6IE0xNDEuMzE1LDE2LjA2MQ0KCQljMC4zMzQsMCwwLjQyNywwLjIyMiwwLjQyNywwLjM4OWMwLDAuMjIzLTAuMTQ4LDAuNTU3LTAuNjEyLDAuNTU3aC00LjIyOWMtMC4zMTUsMC0wLjU3NC0wLjI0MS0wLjU3NC0wLjUwMQ0KCQljMC0wLjIwNCwwLjExMS0wLjQwNywwLjMzMy0wLjQ0NEgxNDEuMzE1eiBNMTM5LjU1Myw5LjMyOGMwLDAuMzE1LTAuMTMsMC41MzgtMC40NjQsMC41MzhjLTAuMzE1LDAtMC40NDQtMC4yMjItMC40NDQtMC41MzhWNy4wNjUNCgkJYzAtMC4zMTUsMC4xMjktMC41MzgsMC40NDQtMC41MzhjMC4zMzQsMCwwLjQ2NCwwLjIyMywwLjQ2NCwwLjUzOFY5LjMyOHogTTMuNTIyLDQuNDUzYzEuMjI5LDAsMi4yMjctMC45OTcsMi4yMjctMi4yMjcNCgkJUzQuNzUyLDAsMy41MjIsMFMxLjI5NiwwLjk5NywxLjI5NiwyLjIyNlMyLjI5Myw0LjQ1MywzLjUyMiw0LjQ1M3oiLz4NCjwvZz4NCjwvc3ZnPg0K"
+            alt=""
+          />
+        </li>
+        <li class="Recipes">Recipes</li>
+        <li class="Travel">Travel</li>
+        <li class="mode">
+          <img
+            class="modeImg"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHBhdGggZD0iTTcuMywxNmMwLDQuOCwzLjksOC43LDguNyw4LjdWNy4zQzExLjIsNy4zLDcuMywxMS4yLDcuMywxNnoiPjwvcGF0aD48cGF0aCBkPSJNMTYsMkM4LjMsMiwyLDguMywyLDE2YzAsNy43LDYuMywxNCwxNCwxNGM3LjcsMCwxNC02LjMsMTQtMTRDMzAsOC4zLDIzLjcsMiwxNiwyeiBNMTYsMjYuNWMtNS44LDAtMTAuNS00LjctMTAuNS0xMC41ICAgIGMwLTUuOCw0LjctMTAuNSwxMC41LTEwLjVTMjYuNSwxMC4yLDI2LjUsMTZDMjYuNSwyMS44LDIxLjgsMjYuNSwxNiwyNi41eiI+PC9wYXRoPjwvc3ZnPg=="
+            alt=""
+          />
+        </li>
+        <li class="search">
+          <img
+            class="searchLogo"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNODcsODEuM0w2OS4xLDYzLjRjOS0xMS43LDguMS0yOC42LTIuNy0zOS4zYy01LjktNS45LTEzLjUtOC44LTIxLjItOC44cy0xNS4zLDIuOS0yMS4yLDguOGMtMTEuNywxMS43LTExLjcsMzAuNywwLDQyLjQgIGM1LjksNS45LDEzLjUsOC44LDIxLjIsOC44YzYuNCwwLDEyLjgtMiwxOC4xLTYuMUw4MS4zLDg3YzAuOCwwLjgsMS44LDEuMiwyLjksMS4yYzEsMCwyLjEtMC40LDIuOS0xLjIgIEM4OC42LDg1LjUsODguNiw4Mi45LDg3LDgxLjN6IE00NS4zLDY3LjJjLTUuOSwwLTExLjMtMi4zLTE1LjUtNi40Yy04LjUtOC41LTguNS0yMi40LDAtMzFjNC4xLTQuMSw5LjYtNi40LDE1LjUtNi40ICBzMTEuMywyLjMsMTUuNSw2LjRzNi40LDkuNiw2LjQsMTUuNWMwLDUuOS0yLjMsMTEuMy02LjQsMTUuNVM1MS4xLDY3LjIsNDUuMyw2Ny4yeiI+PC9wYXRoPjwvc3ZnPg=="
+            alt=""
+          />
+        </li>
+      </ul>
+    </nav>
+    <hr class="hr1" />
+
+    <nav2 class="nav2">
+      <ul>
+        <li class="hover-link nav2S">CHICKEN</li>
+
+        <li class="hover-link1">PASTA/NOODLES</li>
+        <li class="hover-link1">QUARANTINE COOKING</li>
+        <li class="hover-link">AIR FRYER</li>
+        <li class="hover-link1">BREAKFAST/BRUNCH</li>
+        <li class="hover-link2">INSTANT POT</li>
+        <li class="hover-link2">GLUTEN-FREE</li>
+        <li class="hover-link nav2L">TACOS</li>
+      </ul>
+    </nav2>
+
+    <hr class="hr2" />
+
+    <div class="foodMenu1">
+      <img src="Dfood1.png" alt="" class="food food1" />
+      <img src="Dfood2.png" alt="" class="food food2" />
+      <img src="Dfood3.png" alt="" class="food food3" />
+      <img src="Dfood4.png" alt="" class="food food4" />
+      <img src="Dfood5.png" alt="" class="food food5" />
+
+      <div class="foodFooter1">
+        <p class="searchPara">
+          Search Recipies, eg:fried rice
+          <img class="searchLogoSearch" src="search.png" alt="" />
+        </p>
+        <p class="seeAll">See all posts, chronologically<span>&#8594;</span></p>
+      </div>
+    </div>
+
+    <div class="cont">
+      <h1>Most Popular Recipes This Week</h1>
+      <div class="cardsR c1">
+        <img class="cardRImg" src="H2food1.jpg" alt="" />
+        <span class="foodNo">1</span>
+        <div class="cardRcont">
+          <h3>Nodeles</h3>
+          <h2>Tiktok Ramen</h2>
+          <h5>
+            Rating: 4.73
+            <div class="star">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </h5>
+        </div>
+      </div>
+
+      <div class="cardsR c2">
+        <img class="cardRImg" src="H2food2.jpg" alt="" />
+        <span class="foodNo">2</span>
+        <div class="cardRcont">
+          <h3>One Pot Wonders</h3>
+          <h2>Easiest Paella Ever</h2>
+          <h5>
+            Rating: 4.68
+            <div class="star">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </h5>
+        </div>
+      </div>
+
+      <div class="cardsR c3">
+        <img class="cardRImg" src="H2food3.jpg" alt="" />
+        <span class="foodNo">3</span>
+        <div class="cardRcont">
+          <h3>30 Minutes or Less</h3>
+          <h2>Easy 2 Minute Chocolate Mug Cake</h2>
+          <h5>
+            Rating: 4.76
+            <div class="star">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </h5>
+        </div>
+      </div>
+
+      <div class="cardsR c4">
+        <img class="cardRImg" src="H2food4.jpg" alt="" />
+        <span class="foodNo">4</span>
+        <div class="cardRcont">
+          <h3>italian food</h3>
+          <h2>Easiest Ever Instant Pot Osso Buco</h2>
+          <h5>
+            Rating: 4.67
+            <div class="star">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </h5>
+        </div>
+      </div>
+
+      <div class="cardsR c5">
+        <img class="cardRImg" src="H2food5.jpg" alt="" />
+        <span class="foodNo">5</span>
+        <div class="cardRcont">
+          <h3>japanese food</h3>
+          <h2>Sushi Bake</h2>
+          <h5>
+            Rating: 4.63
+            <div class="star">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </h5>
+        </div>
+      </div>
+
+      <div class="cardsR c6">
+        <img class="cardRImg" src="H2food6.jpg" alt="" />
+        <span class="foodNo">6</span>
+        <div class="cardRcont">
+          <h3>pasta</h3>
+          <h2>Easiest Homemade Velveeta Mac and Cheese</h2>
+          <h5>
+            Rating: 4.75
+            <div class="star">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </h5>
+        </div>
+      </div>
+
+      <div class="cardsR c7">
+        <img class="cardRImg" src="H2food7.jpg" alt="" />
+        <span class="foodNo">7</span>
+        <div class="cardRcont">
+          <h3>mexican food</h3>
+          <h2>Chicken Tinga Recipe</h2>
+          <h5>
+            Rating: 4.73
+            <div class="star">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </h5>
+        </div>
+      </div>
+
+      <div class="cardsR c8">
+        <img class="cardRImg" src="H2food8.jpg" alt="" />
+        <span class="foodNo">8</span>
+        <div class="cardRcont">
+          <h3>gadgets</h3>
+          <h2>How to Make the Crunchiest Asian Fried Chicken</h2>
+          <h5>
+            Rating: 4.7
+            <div class="star">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </h5>
+        </div>
+      </div>
+
+      <div class="cardsR c9">
+        <img class="cardRImg" src="H2food9.jpg" alt="" />
+        <span class="foodNo">9</span>
+        <div class="cardRcont">
+          <h3>tacos</h3>
+          <h2>Al Pastor</h2>
+          <h5>
+            Rating: 4.65
+            <div class="star">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </h5>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <cont2 class="cont2">
+       
+        <h2 class="cont2H">Our Best Chiken Recipes</h2>
+    <div class="content2">
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f1.jpg" alt="" />
+
+        <h3 class="highl">Gadgets</h3>
+        <h2 class="cnt2H2">How to Make the Crunchiest Asian 
+            Fried Chicken in an Air Fryer</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.65
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            This back-pocket air fryer technique yields 
+            the crispiest, crunchiest, juiciest chicken wings 
+            ever.
+        </p>
+        
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f2.jpg" alt="" />
+
+        <h3 class="highl">Pasta</h3>
+        <h2 class="cnt2H2">Chicken Spaghetti</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.82
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Chicken spaghetti is pure comfort food goodness: tender 
+            pieces chicken mixed with spaghetti, tomatoes, 
+            and peppers in a creamy cheesy sauce.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f3.jpg" alt="" />
+        <h3 class="highl"> chicken recipes </h3>
+        <h2 class="cnt2H2">Easy Authentic Satay Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.92
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Gorgeously grilled chicken satay 
+            skewers are perfect with a 
+            sweet-and-tangy no peanut peanut sauce.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f4.jpg" alt="" />
+
+        <h3 class="highl">japanese Food</h3>
+        <h2 class="cnt2H2">Chicken Katsu: Easy Air Fryer, 
+            Deep Fried, and Oven Versions </h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.93
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Juicy, tender chicken, with crispy panko breadcrumbs on the outside, fluffy rice and crunchy cabbage. It's a super easy dream meal! 
+        </p>
+      </div>
+
+
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f5.jpg" alt="" />
+
+        <h3 class="highl"> chinese take out </h3>
+        <h2 class="cnt2H2">The Best Kung Pao Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.77
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            This spicy, tangy, and sweet better than takeout no peanut kung pao chicken stir fry recipe is here to brighten up your weeknight (or weekend) dinners! Highly addictive and super easy to make at home.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f6.jpg" alt="" />
+        <h3 class="highl">Esay</h3>
+        <h2 class="cnt2H2">Lemon Pepper Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 6
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            If you’re looking for a flavorful, healthy dinner, this lemon pepper dill cous cous is the answer.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f7.jpg" alt="" />
+        <h3 class="highl"> one pot wonders </h3>
+        <h2 class="cnt2H2">Easiest Paella Ever</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.68
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Paella even has its own emoji 🥘 – it NEEDS to be made and eaten.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f8.jpg" alt="" />
+       
+        <h3 class="highl"> air fryer recipes </h3>
+        <h2 class="cnt2H2">Korean Fried Chicken Wings</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.85
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Make crispy crunchy Korean fried chicken in an air fryer with this easy double air fry technique.
+        </p>
+      </div>
+    
+
+
+    </div>
+
+
+
+
+
+    <h2 class="cont2H">We love our air fryer</h2>
+    <div class="content2">
+
+        <div class="cont2cards">
+        <img class="cnt2img1" src="c2f9.jpg" alt="" />
+
+        <h3 class="highl">Gadgets</h3>
+        <h2 class="cnt2H2">How to Make the Crunchiest Asian 
+            Fried Chicken in an Air Fryer</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.65
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            This back-pocket air fryer technique yields 
+            the crispiest, crunchiest, juiciest chicken wings 
+            ever.
+        </p>
+        
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f10.jpg" alt="" />
+
+        <h3 class="highl">Pasta</h3>
+        <h2 class="cnt2H2">Chicken Spaghetti</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.82
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Chicken spaghetti is pure comfort food goodness: tender 
+            pieces chicken mixed with spaghetti, tomatoes, 
+            and peppers in a creamy cheesy sauce.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f11.jpg" alt="" />
+        <h3 class="highl"> chicken recipes </h3>
+        <h2 class="cnt2H2">Easy Authentic Satay Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.92
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Gorgeously grilled chicken satay 
+            skewers are perfect with a 
+            sweet-and-tangy no peanut peanut sauce.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f12.jpg" alt="" />
+
+        <h3 class="highl">japanese Food</h3>
+        <h2 class="cnt2H2">Chicken Katsu: Easy Air Fryer, 
+            Deep Fried, and Oven Versions </h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.93
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Juicy, tender chicken, with crispy panko breadcrumbs on the outside, fluffy rice and crunchy cabbage. It's a super easy dream meal! 
+        </p>
+      </div>
+
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f13.jpg" alt="" />
+
+        <h3 class="highl"> chinese take out </h3>
+        <h2 class="cnt2H2">The Best Kung Pao Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.77
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            This spicy, tangy, and sweet better than takeout no peanut kung pao chicken stir fry recipe is here to brighten up your weeknight (or weekend) dinners! Highly addictive and super easy to make at home.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f14.jpg" alt="" />
+        <h3 class="highl">Esay</h3>
+        <h2 class="cnt2H2">Lemon Pepper Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 6
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            If you’re looking for a flavorful, healthy dinner, this lemon pepper dill cous cous is the answer.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f15.jpg" alt="" />
+        <h3 class="highl"> one pot wonders </h3>
+        <h2 class="cnt2H2">Easiest Paella Ever</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.68
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Paella even has its own emoji 🥘 – it NEEDS to be made and eaten.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f16.jpg" alt="" />
+       
+        <h3 class="highl"> air fryer recipes </h3>
+        <h2 class="cnt2H2">Korean Fried Chicken Wings</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.85
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Make crispy crunchy Korean fried chicken in an air fryer with this easy double air fry technique.
+        </p>
+      </div>
+    
+    </div>
+
+
+
+
+
+
+
+    <h2 class="cont2H">Vegan/Vegetarian Recipes</h2>
+    <div class="content2">
+
+        <div class="cont2cards">
+        <img class="cnt2img1" src="c2f17.jpg" alt="" />
+
+        <h3 class="highl">Gadgets</h3>
+        <h2 class="cnt2H2">How to Make the Crunchiest Asian 
+            Fried Chicken in an Air Fryer</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.65
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            This back-pocket air fryer technique yields 
+            the crispiest, crunchiest, juiciest chicken wings 
+            ever.
+        </p>
+        
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f18.jpg" alt="" />
+
+        <h3 class="highl">Pasta</h3>
+        <h2 class="cnt2H2">Chicken Spaghetti</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.82
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Chicken spaghetti is pure comfort food goodness: tender 
+            pieces chicken mixed with spaghetti, tomatoes, 
+            and peppers in a creamy cheesy sauce.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f19.jpg" alt="" />
+        <h3 class="highl"> chicken recipes </h3>
+        <h2 class="cnt2H2">Easy Authentic Satay Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.92
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Gorgeously grilled chicken satay 
+            skewers are perfect with a 
+            sweet-and-tangy no peanut peanut sauce.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f20.jpg" alt="" />
+
+        <h3 class="highl">japanese Food</h3>
+        <h2 class="cnt2H2">Chicken Katsu: Easy Air Fryer, 
+            Deep Fried, and Oven Versions </h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.93
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Juicy, tender chicken, with crispy panko breadcrumbs on the outside, fluffy rice and crunchy cabbage. It's a super easy dream meal! 
+        </p>
+      </div>
+
+
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f21.jpg" alt="" />
+
+        <h3 class="highl"> chinese take out </h3>
+        <h2 class="cnt2H2">The Best Kung Pao Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.77
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            This spicy, tangy, and sweet better than takeout no peanut kung pao chicken stir fry recipe is here to brighten up your weeknight (or weekend) dinners! Highly addictive and super easy to make at home.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f22.jpg" alt="" />
+        <h3 class="highl">Esay</h3>
+        <h2 class="cnt2H2">Lemon Pepper Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 6
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            If you’re looking for a flavorful, healthy dinner, this lemon pepper dill cous cous is the answer.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f23.jpg" alt="" />
+        <h3 class="highl"> one pot wonders </h3>
+        <h2 class="cnt2H2">Easiest Paella Ever</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.68
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Paella even has its own emoji 🥘 – it NEEDS to be made and eaten.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f24.jpg" alt="" />
+       
+        <h3 class="highl"> air fryer recipes </h3>
+        <h2 class="cnt2H2">Korean Fried Chicken Wings</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.85
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Make crispy crunchy Korean fried chicken in an air fryer with this easy double air fry technique.
+        </p>
+      </div>
+    
+    </div>
+
+
+
+
+
+    <h2 class="cont2H">Super easy, barely an inconvenience</h2>
+    <div class="content2">
+
+        <div class="cont2cards">
+        <img class="cnt2img1" src="c2f25.jpg" alt="" />
+
+        <h3 class="highl">Gadgets</h3>
+        <h2 class="cnt2H2">How to Make the Crunchiest Asian 
+            Fried Chicken in an Air Fryer</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.65
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            This back-pocket air fryer technique yields 
+            the crispiest, crunchiest, juiciest chicken wings 
+            ever.
+        </p>
+        
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f26.jpg" alt="" />
+
+        <h3 class="highl">Pasta</h3>
+        <h2 class="cnt2H2">Chicken Spaghetti</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.82
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Chicken spaghetti is pure comfort food goodness: tender 
+            pieces chicken mixed with spaghetti, tomatoes, 
+            and peppers in a creamy cheesy sauce.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f27.jpg" alt="" />
+        <h3 class="highl"> chicken recipes </h3>
+        <h2 class="cnt2H2">Easy Authentic Satay Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.92
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Gorgeously grilled chicken satay 
+            skewers are perfect with a 
+            sweet-and-tangy no peanut peanut sauce.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f28.jpg" alt="" />
+
+        <h3 class="highl">japanese Food</h3>
+        <h2 class="cnt2H2">Chicken Katsu: Easy Air Fryer, 
+            Deep Fried, and Oven Versions </h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.93
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Juicy, tender chicken, with crispy panko breadcrumbs on the outside, fluffy rice and crunchy cabbage. It's a super easy dream meal! 
+        </p>
+      </div>
+
+
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f29.jpg" alt="" />
+
+        <h3 class="highl"> chinese take out </h3>
+        <h2 class="cnt2H2">The Best Kung Pao Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.77
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            This spicy, tangy, and sweet better than takeout no peanut kung pao chicken stir fry recipe is here to brighten up your weeknight (or weekend) dinners! Highly addictive and super easy to make at home.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f30.jpg" alt="" />
+        <h3 class="highl">Esay</h3>
+        <h2 class="cnt2H2">Lemon Pepper Chicken</h2>
+        <h5 class="cnt2Rat">
+          Rating: 6
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            If you’re looking for a flavorful, healthy dinner, this lemon pepper dill cous cous is the answer.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f31.jpg" alt="" />
+        <h3 class="highl"> one pot wonders </h3>
+        <h2 class="cnt2H2">Easiest Paella Ever</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.68
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Paella even has its own emoji 🥘 – it NEEDS to be made and eaten.
+        </p>
+      </div>
+
+      <div class="cont2cards">
+        <img class="cnt2img1" src="c2f32.jpg" alt="" />
+       
+        <h3 class="highl"> air fryer recipes </h3>
+        <h2 class="cnt2H2">Korean Fried Chicken Wings</h2>
+        <h5 class="cnt2Rat">
+          Rating: 4.85
+            <img class="star2" src="starImg.png" alt="">
+        </h5>
+        <p class="cnt2P">
+            Make crispy crunchy Korean fried chicken in an air fryer with this easy double air fry technique.
+        </p>
+      </div>
+    
+    </div>
+
+
+
+</cont2>
+
+
+<footer1 class="foot1">
+  <div class="foot1A">
+    <div>About</div>
+    <div>Recipe Index</div>
+    <div>Contanct</div>
+  </div>
+  <div class="foot1B">
+    <img class="instaImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4NCgkJCQkgICAgCQkJPHBhdGggY2xhc3M9InNpbmdsZS1tZW51IiBkPSJNMjU2LDQ5LjQ3MWM2Ny4yNjYsMCw3NS4yMzMuMjU3LDEwMS44LDEuNDY5LDI0LjU2MiwxLjEyMSwzNy45LDUuMjI0LDQ2Ljc3OCw4LjY3NGE3OC4wNTIsNzguMDUyLDAsMCwxLDI4Ljk2NiwxOC44NDUsNzguMDUyLDc4LjA1MiwwLDAsMSwxOC44NDUsMjguOTY2YzMuNDUsOC44NzcsNy41NTQsMjIuMjE2LDguNjc0LDQ2Ljc3OCwxLjIxMiwyNi41NjUsMS40NjksMzQuNTMyLDEuNDY5LDEwMS44cy0wLjI1Nyw3NS4yMzMtMS40NjksMTAxLjhjLTEuMTIxLDI0LjU2Mi01LjIyNSwzNy45LTguNjc0LDQ2Ljc3OGE4My40MjcsODMuNDI3LDAsMCwxLTQ3LjgxMSw0Ny44MTFjLTguODc3LDMuNDUtMjIuMjE2LDcuNTU0LTQ2Ljc3OCw4LjY3NC0yNi41NiwxLjIxMi0zNC41MjcsMS40NjktMTAxLjgsMS40NjlzLTc1LjIzNy0uMjU3LTEwMS44LTEuNDY5Yy0yNC41NjItMS4xMjEtMzcuOS01LjIyNS00Ni43NzgtOC42NzRhNzguMDUxLDc4LjA1MSwwLDAsMS0yOC45NjYtMTguODQ1LDc4LjA1Myw3OC4wNTMsMCwwLDEtMTguODQ1LTI4Ljk2NmMtMy40NS04Ljg3Ny03LjU1NC0yMi4yMTYtOC42NzQtNDYuNzc4LTEuMjEyLTI2LjU2NC0xLjQ2OS0zNC41MzItMS40NjktMTAxLjhzMC4yNTctNzUuMjMzLDEuNDY5LTEwMS44YzEuMTIxLTI0LjU2Miw1LjIyNC0zNy45LDguNjc0LTQ2Ljc3OEE3OC4wNTIsNzguMDUyLDAsMCwxLDc4LjQ1OCw3OC40NThhNzguMDUzLDc4LjA1MywwLDAsMSwyOC45NjYtMTguODQ1YzguODc3LTMuNDUsMjIuMjE2LTcuNTU0LDQ2Ljc3OC04LjY3NCwyNi41NjUtMS4yMTIsMzQuNTMyLTEuNDY5LDEwMS44LTEuNDY5bTAtNDUuMzkxYy02OC40MTgsMC03NywuMjktMTAzLjg2NiwxLjUxNi0yNi44MTUsMS4yMjQtNDUuMTI3LDUuNDgyLTYxLjE1MSwxMS43MWExMjMuNDg4LDEyMy40ODgsMCwwLDAtNDQuNjIsMjkuMDU3QTEyMy40ODgsMTIzLjQ4OCwwLDAsMCwxNy4zLDkwLjk4MkMxMS4wNzcsMTA3LjAwNyw2LjgxOSwxMjUuMzE5LDUuNiwxNTIuMTM0LDQuMzY5LDE3OSw0LjA3OSwxODcuNTgyLDQuMDc5LDI1NlM0LjM2OSwzMzMsNS42LDM1OS44NjZjMS4yMjQsMjYuODE1LDUuNDgyLDQ1LjEyNywxMS43MSw2MS4xNTFhMTIzLjQ4OSwxMjMuNDg5LDAsMCwwLDI5LjA1Nyw0NC42MiwxMjMuNDg2LDEyMy40ODYsMCwwLDAsNDQuNjIsMjkuMDU3YzE2LjAyNSw2LjIyOCwzNC4zMzcsMTAuNDg2LDYxLjE1MSwxMS43MSwyNi44NywxLjIyNiwzNS40NDksMS41MTYsMTAzLjg2NiwxLjUxNnM3Ny0uMjksMTAzLjg2Ni0xLjUxNmMyNi44MTUtMS4yMjQsNDUuMTI3LTUuNDgyLDYxLjE1MS0xMS43MWExMjguODE3LDEyOC44MTcsMCwwLDAsNzMuNjc3LTczLjY3N2M2LjIyOC0xNi4wMjUsMTAuNDg2LTM0LjMzNywxMS43MS02MS4xNTEsMS4yMjYtMjYuODcsMS41MTYtMzUuNDQ5LDEuNTE2LTEwMy44NjZzLTAuMjktNzctMS41MTYtMTAzLjg2NmMtMS4yMjQtMjYuODE1LTUuNDgyLTQ1LjEyNy0xMS43MS02MS4xNTFhMTIzLjQ4NiwxMjMuNDg2LDAsMCwwLTI5LjA1Ny00NC42MkExMjMuNDg3LDEyMy40ODcsMCwwLDAsNDIxLjAxOCwxNy4zQzQwNC45OTMsMTEuMDc3LDM4Ni42ODEsNi44MTksMzU5Ljg2Niw1LjYsMzMzLDQuMzY5LDMyNC40MTgsNC4wNzksMjU2LDQuMDc5aDBaIj48L3BhdGg+DQoJCQkJICAgIAkJCTxwYXRoIGNsYXNzPSJzaW5nbGUtbWVudSIgZD0iTTI1NiwxMjYuNjM1QTEyOS4zNjUsMTI5LjM2NSwwLDEsMCwzODUuMzY1LDI1NiwxMjkuMzY1LDEyOS4zNjUsMCwwLDAsMjU2LDEyNi42MzVabTAsMjEzLjMzOEE4My45NzMsODMuOTczLDAsMSwxLDMzOS45NzQsMjU2LDgzLjk3NCw4My45NzQsMCwwLDEsMjU2LDMzOS45NzNaIj48L3BhdGg+DQoJCQkJICAgIAkJCTxjaXJjbGUgY2xhc3M9InNpbmdsZS1tZW51IiBjeD0iMzkwLjQ3NiIgY3k9IjEyMS41MjQiIHI9IjMwLjIzIj48L2NpcmNsZT4NCgkJCQkgICAgCQk8L3N2Zz4=" 
+    alt="">
+    <img class="pImg" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjU2LjY5M3B4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni42OTMgNTYuNjkzIiB3aWR0aD0iNTYuNjkzcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxwYXRoIGNsYXNzPSJzaW5nbGUtbWVudSIgZD0iTTI4LjM0OCw1LjE1OGMtMTMuNTk5LDAtMjQuNjI1LDExLjAyMy0yNC42MjUsMjQuNjI1YzAsMTAuMDgyLDYuMDYzLDE4Ljc0NCwxNC43MzksMjIuNTUzICAgYy0wLjA2OS0xLjcyMS0wLjAxMi0zLjc4MywwLjQyOS01LjY1NGMwLjQ3My0yLDMuMTY4LTEzLjQxOCwzLjE2OC0xMy40MThzLTAuNzg3LTEuNTcyLTAuNzg3LTMuODk2ICAgYzAtMy42NDgsMi4xMTUtNi4zNzMsNC43NDktNi4zNzNjMi4yNCwwLDMuMzIyLDEuNjgyLDMuMzIyLDMuNjk1YzAsMi4yNTItMS40MzcsNS42MTktMi4xNzUsOC43MzggICBjLTAuNjE2LDIuNjEzLDEuMzEsNC43NDQsMy44ODcsNC43NDRjNC42NjUsMCw3LjgwOC01Ljk5Miw3LjgwOC0xMy4wOTJjMC01LjM5Ny0zLjYzNS05LjQzNy0xMC4yNDYtOS40MzcgICBjLTcuNDcsMC0xMi4xMjMsNS41Ny0xMi4xMjMsMTEuNzkyYzAsMi4xNDYsMC42MzMsMy42NTgsMS42MjQsNC44M2MwLjQ1NSwwLjUzNywwLjUxOSwwLjc1NCwwLjM1NCwxLjM3MSAgIGMtMC4xMTgsMC40NTMtMC4zODksMS41NDUtMC41MDEsMS45NzdjLTAuMTY0LDAuNjI1LTAuNjY5LDAuODQ4LTEuMjMzLDAuNjE3Yy0zLjQ0LTEuNDA0LTUuMDQzLTUuMTcyLTUuMDQzLTkuNDA4ICAgYzAtNi45OTQsNS44OTktMTUuMzgyLDE3LjU5OS0xNS4zODJjOS40LDAsMTUuNTg4LDYuODA0LDE1LjU4OCwxNC4xMDdjMCw5LjY1OC01LjM2OSwxNi44NzUtMTMuMjg1LDE2Ljg3NSAgIGMtMi42NTksMC01LjE2LTEuNDM4LTYuMDE2LTMuMDY4YzAsMC0xLjQzLDUuNjc0LTEuNzMyLDYuNzY4Yy0wLjUyMiwxLjktMS41NDUsMy43OTctMi40NzksNS4yNzUgICBjMi4yMTUsMC42NTQsNC41NTQsMS4wMSw2Ljk3OSwxLjAxYzEzLjU5OCwwLDI0LjYyMy0xMS4wMjMsMjQuNjIzLTI0LjYyM0M1Mi45NzEsMTYuMTgxLDQxLjk0NSw1LjE1OCwyOC4zNDgsNS4xNTh6Ij48L3BhdGg+PC9nPg0KCQkJCSAgICAJCTwvc3ZnPg==" 
+    alt="">
+    <img class="bImg" src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iLTExMDkgNzY5IDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgLTExMDkgNzY5IDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCgkJPHBhdGggZD0iTS02NDcsNzY5aC00MTJjLTI3LjUsMC01MCwyMi41LTUwLDUwdjQxMmMwLDI1LjEsMTguOCw0Ni4xLDQzLDQ5LjVILTY0MGMyMS45LTMuMSwzOS40LTIwLjYsNDIuNS00Mi41VjgxMg0KCQkJQy02MDAuOSw3ODcuOC02MjEuOSw3NjktNjQ3LDc2OXogTS04NDIuNSwxMTM5LjVoLTEyNXYtMjMwaDEyMS4yYzQzLjgsMCw2Ni4zLDI3LjksNjYuMyw1OC42YzAsMjguNi0xNy45LDQ4LjMtMzkuNyw1Mi44DQoJCQljMjQuOSwzLjgsNDQuMiwyNy42LDQ0LjIsNTYuMkMtNzc1LjYsMTExMS45LTc5OC40LDExMzkuNS04NDIuNSwxMTM5LjV6IE0tNzIwLjEsMTAwOS4ybC0xOS0xNS41YzExLTUuOSwyMy44LTIwLjMsMjYuNi0zMi44DQoJCQljLTEsMC43LTMuOCwxLTYuNiwxYy0xMy4xLDAtMjMuNS0xMC0yMy41LTI0LjhzMTIuNC0yNy4yLDI3LjMtMjcuMmMxNi4yLDAsMzAuNywxMi44LDMwLjcsMzUuMg0KCQkJQy02ODQuNSw5NzEtNjk4LjcsOTk0LjEtNzIwLjEsMTAwOS4yeiIvPg0KCQk8cGF0aCBkPSJNLTg1NSwxMDQ0aC02My41djUyLjRoNjMuNWMxOC4zLDAsMjkuMy05LjcsMjkuMy0yNi4yQy04MjUuNiwxMDU1LjctODM2LDEwNDQtODU1LDEwNDR6Ii8+DQoJCTxwYXRoIGQ9Ik0tODMwLjEsOTc2LjdjMC0xNC4xLTEwLjQtMjQuMS0yNi45LTI0LjFoLTYxLjR2NDguM2g2MS40Qy04NDAuNSwxMDAwLjktODMwLjEsOTkxLjYtODMwLjEsOTc2Ljd6Ii8+DQo8L3N2Zz4NCg=="
+     alt="">
+  </div>
+</footer1>
+
+
+<footer2 class="foot2">
+  <strong>Copyright © 2023 iamafoodblog, all rights reserved  
+    <span class="charS">. | About | FAQ |
+      New Here? |
+      Contact |
+      Privacy </span></strong> 
+
+<strong class="foot2B"><p>A Raptive Partner Site</p></strong>
+  </footer2>
+
+    <script src="index.js"></script>
+  </body>
+</html>
