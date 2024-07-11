@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>naveed</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            color: white;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .btn {
+            width: 100%;
+            text-align: center;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: inherit;
+            padding: 12px 0;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(179, 159, 159);
+        }
+
+        .home, .plans, .about, .contact {
+            color: black;
+            background-color: rgb(219, 208, 208);
+            border-radius: 10px;
+            font-size: 20px;
+            position: absolute;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .home {
+            width: 24%;
+        }
+
+        .plans {
+            width: 25%;
+            left: 369px;
+        }
+
+        .about {
+            width: 25%;
+            right: 386px;
+        }
+
+        .contact {
+            width: 25%;
+            right: 0px;
+        }
+
+        .container {
+            padding: 2rem;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            max-width: 70rem; /* Adjusted the width */
+            margin: 0 auto;
+            top: 50px; /* Reduced from 150px */
+            padding-top: 20px; /* Add gap between navigation bar and sliding images */
+        }
+
+        .slider {
+            display: flex;
+            aspect-ratio: 16 / -10;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            border-radius: 0.5rem;
+        }
+
+        .slider img {
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            max-height: 500px; /* Reduced size of images */
+        }
+
+        .slider-nav {
+            display: flex;
+            column-gap: 1rem;
+            position: absolute;
+            bottom: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .slider-nav a {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0.75;
+            transition: opacity ease 250ms;
+        }
+
+        .slider-nav a:hover {
+            opacity: 100%;
+        }
+
+        .offer-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2, h1 {
+            margin-top: 50px;
+            color: black;
+        }
+
+        .underline {
+            width: 50px;
+            height: 3px;
+            background-color: black;
+            margin: 10px auto 30px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px; /* Reduce gap between cards */
+            max-width: 70rem; /* Keep cards within the length of the images */
+            margin: 0 auto;
+            margin-bottom: 50px; /* Add space between cards and tables */
+        }
+
+        .card {
+            flex: 1;
+            margin: 0;
+            padding: 20px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: black;
+            max-width: 23%; /* Make cards less wide */
+        }
+
+        .card:nth-child(2) {
+            background-color: #c0c0c0;
+        }
+
+        .card:nth-child(3) {
+            background-color: #a0a0a0;
+        }
+
+        .card:nth-child(4) {
+            background-color: #808080;
+            color: white;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 70rem;
+            margin: 0 auto;
+
+        }
+        .table-container:hover{
+            box-shadow: 10px 10px 20px black;
+        }
+
+        table.basic {
+            width: 30%;
+            border-collapse: collapse;
+            margin-left: 20px; /* Shift table to the left a bit */
+        }
+
+        table.basic th {
+            background-color: black;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        table.basic td {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .btn1, .btn2, .btn3 {
+            color: black;
+            background-color: green;
+            width: 45%;
+            text-align: center;
+            font-size: 20px;
+            padding: 12px 0;
+            cursor: pointer;
+        }
+
+        .btn1:hover, .btn2:hover, .btn3:hover {
+            background-color: rgb(179, 159, 159);
+        }
+
+        .centered-heading {
+            text-align: center;
+            
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-between; /* Changed from center to space-between */
+            gap: 20px;
+            padding: 20px;
+            max-width: 70rem; /* Set the same max-width as the tables */
+            margin: 0 auto; /* Center the team-container */
+            margin-bottom: 50px; /* Add space below the team container */
+        }
+
+        .team-member {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: auto;
+        }
+
+        .team-member h3 {
+            margin: 20px 0 10px;
+        }
+
+        .team-member h4 {
+            margin: 0;
+            color: #777;
+            font-weight: normal;
+        }
+
+        .team-member p {
+            padding: 0 20px;
+            color: #555;
+        }
+
+        .team-member .contact-btn {
+            display: block;
+            margin: 20px;
+            padding: 10px 0;
+            background-color: #f4f4f4;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .team-member .contact-btn:hover {
+            background-color: #ddd;
+        }
+
+        form {
+            max-width: 70rem; /* Adjusted the max-width to match other elements */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px; /* Reduced margin-bottom for less space between label and input */
+            color: black;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer h2 {
+            margin: 0;
+            font-size: 24px;
+            color: black;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-to-top:hover {
+            background-color: #333;
+        }
+
+        .back-to-top::before {
+            content: "⬆";
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 24px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="home">
+            <button class="btn">Home</button>
+        </div>
+        <div class="plans">
+            <button class="btn">Plans</button>
+        </div>
+        <div class="about">
+            <button class="btn">About</button>
+        </div>
+        <div class="contact">
+            <button class="btn">Contact</button>
+        </div>
+
+        <section class="container">
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <img id="slide-1" src="img/one.jpg">
+                    <img id="slide-2" src="img/two.jpeg">
+                    <img id="slide-3" src="img/three.jpeg">
+                </div>
+                <div class="slider-nav">
+                    <a href="#slide-1"></a>
+                    <a href="#slide-2"></a>
+                    <a href="#slide-3"></a>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <div class="offer-container">
+        <h2>What We Offer</h2>
+        <div class="underline"></div>
+        <div class="cards">
+            <div class="card">
+                <h3>Design</h3>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            </div>
+            <div class="card">
+                <h3>Branding</h3>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            </div>
+            <div class="card">
+                <h3>Consultation</h3>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            </div>
+            <div class="card">
+                <h3>Promises</h3>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="centered-heading">Pricing Plans</h1>
+    
+    <div class="table-container">
+        <table class="basic">
+            <tr id="basic">
+                <th>Basic</th>
+            </tr>
+            <tr>
+                <td>10 GB Storage</td>
+            </tr>
+            <tr>
+                <td>10 Emails</td>
+            </tr>
+            <tr>
+                <td>10 Domains</td>
+            </tr>
+            <tr>
+                <td>$10 per month</td>
+            </tr>
+            <tr>
+                <td><button class="btn1">Sign Up</button></td>
+            </tr>
+        </table>
+        <table class="basic">
+            <tr id="basic">
+                <th>Standard</th>
+            </tr>
+            <tr>
+                <td>50 GB Storage</td>
+            </tr>
+            <tr>
+                <td>50 Emails</td>
+            </tr>
+            <tr>
+                <td>20 Domains</td>
+            </tr>
+            <tr>
+                <td>$20 per month</td>
+            </tr>
+            <tr>
+                <td><button class="btn2">Sign Up</button></td>
+            </tr>
+        </table>
+        <table class="basic">
+            <tr id="basic">
+                <th>Premium</th>
+            </tr>
+            <tr>
+                <td>100 GB Storage</td>
+            </tr>
+            <tr>
+                <td>100 Emails</td>
+            </tr>
+            <tr>
+                <td>50 Domains</td>
+            </tr>
+            <tr>
+                <td>$30 per month</td>
+            </tr>
+            <tr>
+                <td><button class="btn3">Sign Up</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <h1 class="centered-heading">Who We Are</h1>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="img/jone.jpg" >
+            <h3>Jane Doe</h3>
+            <h4>CEO & Founder</h4>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <a href="#" class="contact-btn">Contact</a>
+        </div>
+        <div class="team-member">
+            <img src="img/mike.jpg" alt="Mike Ross">
+            <h3>Mike Ross</h3>
+            <h4>Art Director</h4>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <a href="#" class="contact-btn">Contact</a>
+        </div>
+        <div class="team-member">
+            <img src="img/john.jpg" alt="John Doe">
+            <h3>John Doe</h3>
+            <h4>Designer</h4>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <a href="#" class="contact-btn">Contact</a>
+        </div>
+    </div>
+    <h1 class="centered-heading">Contact Us</h1>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name">
+
+        <label for="email">Email</label>
+        <input type="text" id="email">
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject">
+
+        <label for="message">Message</label>
+        <input type="text" id="message">
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <footer class="footer">
+        <h2>Footer</h2>
+        <a href="#" class="back-to-top">To the top</a>
+        <div class="social-icons">
+            <a href="#" target="_blank">🌐</a> <!-- Facebook Icon -->
+            <a href="#" target="_blank">📸</a> <!-- Instagram Icon -->
+            <a href="#" target="_blank">👻</a> <!-- Snapchat Icon -->
+            <a href="#" target="_blank">📌</a> <!-- Pinterest Icon -->
+            <a href="#" target="_blank">🐦</a> <!-- Twitter Icon -->
+            <a href="#" target="_blank">🔗</a> <!-- LinkedIn Icon -->
+        </div>
+    </footer>
+</body>
+</html>

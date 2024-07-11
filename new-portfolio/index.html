@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<style>
+    body{
+        /* CSS Reset */
+        
+        margin:0px;
+        padding:0px;
+        background-color: rgb(251, 248, 204);
+        
+    }
+    .left{
+        display: inline-block;
+        border: 2px solid red;
+        position: absolute;
+            left:34px;
+            top:22px;
+        }
+        
+        .mid{
+            
+            width:33%;
+            margin:22px auto;
+            padding: 10px 10px;
+            /*border: 2px solid green;*/
+            margin-left: 317px;
+        }
+        
+        .right{
+            position: absolute;
+            right:34px;
+            top:22px;
+            display: inline-block;
+            padding: 0px 35px;
+            /*border: 2px solid yellow;*/
+        }
+        .right a {
+            padding: 10px 10px;
+            font-size: 40px;
+            width: 10px;
+            height: 10px;
+        }
+        .navbar{
+            display: inline-block;
+        }
+        
+        .navbar li{
+            display: inline-block;
+            font-size: 20px;
+        }
+        
+        .navbar li a{
+            color: rgb(8, 3, 3);
+            text-decoration: none;
+            padding: 5px 12px;
+            font-size: 30px;
+            font-weight: bold;
+
+            
+        }
+        .navbar li a:hover, .navbar li a.active{
+        text-decoration: underline;
+        color: grey;
+        }
+        .left img{
+            width:100px;
+           /* mix-blend-mode: darken;*/
+            filter:invert(100%) 
+        }
+        
+        .left div{
+            text-align: center;
+        }
+        .btn{
+            margin :0px 9px;
+            color:white;
+            background-color: black;
+            padding: 12px 12px;
+            border: 5px solid black;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .btn:hover{
+            background-color: rgb(168, 141, 141);
+        }
+        .photo {
+            background-color: #725d5d;
+            border-radius: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 220px; /* Adjust this value to move it more to the left */
+            width: 300px;
+            float: right;
+            padding: 20px 20px;
+        }
+        .photo img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%; /* Optional: if you want to make it circular */
+        }
+        .text{
+            margin-left: 380px;
+            margin-top: 85px;
+        }
+        .upper{
+            font-size: 50px;
+            color: blue;
+            font-weight: bold;
+        }
+        .middle,.lower{
+            font-size: 40px;
+            color: blue;
+        }
+        .resume{
+            margin :0px 9px;
+            color:white;
+            background-color: black;
+            padding: 12px 28px;
+            border: 5px solid black;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 384px
+        }
+        .resume a {
+            color: white;
+            text-decoration: none;
+        }
+        .resume:hover{
+            background-color: rgb(168, 141, 141);
+        }
+       
+</style>
+<body>
+    <header class="header">
+       
+        <!-- mid for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <!-- <li><a href="#">About me</a></li> -->
+                <li><a href="marketing.html">Project</a></li>
+                <li><a href="contact.html">Contact me</a></li>
+            
+            </ul>
+        </div>
+        
+        <div class="right">
+    
+    <a href="https://www.facebook.com/md.naveed.37853734" target="_blank">🌐</a> <!-- Facebook Icon -->
+
+            <a href="https://www.instagram.com/md_naveed_anjum/?next=%2F" target="_blank">📸</a> <!-- Instagram Icon -->
+
+            <a href="https://x.com/MdNaveedAnjum" target="_blank">🐦</a> <!-- Twitter Icon -->
+
+            <a href="https://www.linkedin.com/in/md-naveed-anjum-527324244/" target="_blank">🔗</a> <!-- LinkedIn Icon -->
+        </div>
+    </header>
+
+    
+        <div class="photo">
+            <img src="img/me2.jpg">
+        </div>
+    <div class="text">
+        <p class="upper">Hello , I am Md Naveed Anjum</p>
+        <p class="middle">A Computer Science graduate</p>
+        <p class="lower">CGPA : 7.79/10</p>
+    </div>
+
+    
+        <button class="resume">
+            <a href="Desktop/Naveed-ATS-1[1].pdf" download="Naveed-ATS-1[1].pdf">Resume</a>
+        </button>
+        
+
+</body>
+</html>
